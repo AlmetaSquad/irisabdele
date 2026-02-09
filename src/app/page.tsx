@@ -1,0 +1,375 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import SectionHeading from "@/components/SectionHeading";
+import {
+  ArrowRight,
+  Sparkles,
+  Heart,
+  Brain,
+  Leaf,
+  Star,
+  Phone,
+  Instagram,
+  ChevronDown,
+} from "lucide-react";
+
+const services = [
+  {
+    icon: Heart,
+    title: "Pain Management",
+    description:
+      "Relief from headaches, arthritis, back pain, neck & shoulder tension, and frozen shoulder through targeted acupuncture.",
+    color: "from-rose-50 to-pink-50",
+    iconColor: "text-rose-500",
+  },
+  {
+    icon: Sparkles,
+    title: "Female Wellness",
+    description:
+      "Support for period pain, irregular periods, menopausal symptoms, fertility, IVF support, and pregnancy care.",
+    color: "from-purple-50 to-violet-50",
+    iconColor: "text-purple-500",
+  },
+  {
+    icon: Brain,
+    title: "Mental Wellbeing",
+    description:
+      "Holistic treatment for anxiety, stress, insomnia, fatigue, brain fog, and immune system support.",
+    color: "from-blue-50 to-indigo-50",
+    iconColor: "text-blue-500",
+  },
+  {
+    icon: Leaf,
+    title: "Digestive Health",
+    description:
+      "Natural relief for IBS symptoms, constipation, diarrhoea, nausea, and other digestive concerns.",
+    color: "from-emerald-50 to-green-50",
+    iconColor: "text-emerald-500",
+  },
+];
+
+const testimonials = [
+  {
+    text: "Iris has an intuitive presence that makes you feel immediately calm. Her professional knowledge combined with genuine care for my progress has been transformative.",
+    author: "Sarah M.",
+    rating: 5,
+  },
+  {
+    text: "After years of chronic pain, I finally found relief through Iris's acupuncture treatments. She truly listens and tailors each session to your needs.",
+    author: "James L.",
+    rating: 5,
+  },
+  {
+    text: "The facial treatments are incredible. My skin has never looked better, and the whole experience is so relaxing. Iris is truly gifted at what she does.",
+    author: "Emma R.",
+    rating: 5,
+  },
+];
+
+export default function Home() {
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-dark to-[#2d2b5e]" />
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 50%, rgba(201,169,110,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 40%), radial-gradient(circle at 60% 80%, rgba(201,169,110,0.2) 0%, transparent 45%)",
+          }}
+        />
+
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-20 w-96 h-96 rounded-full border border-white/5 animate-float" />
+        <div className="absolute bottom-32 left-16 w-48 h-48 rounded-full border border-accent/10" />
+        <div className="absolute top-1/3 left-1/4 w-2 h-2 bg-accent/40 rounded-full animate-float" />
+        <div className="absolute top-1/2 right-1/3 w-3 h-3 bg-white/10 rounded-full animate-float" style={{ animationDelay: "2s" }} />
+
+        {/* Content */}
+        <div className="relative text-center px-6 max-w-4xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-accent uppercase tracking-[0.4em] text-sm font-semibold mb-6"
+          >
+            Holistic Healing &middot; Richmond, London
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            TCM Acupuncture
+            <br />
+            <span className="italic text-accent">&amp;</span> Manual Lymphatic
+            <br />
+            Drainage
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-8 text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+          >
+            Restore balance, relieve pain, and enhance your natural beauty with
+            personalised Traditional Chinese Medicine treatments.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Link
+              href="/contact"
+              className="group px-8 py-4 bg-accent text-white uppercase tracking-wider text-sm rounded-full hover:bg-accent-light transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 flex items-center justify-center gap-2"
+            >
+              Book a Consultation
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              href="/treatments"
+              className="px-8 py-4 border border-white/30 text-white uppercase tracking-wider text-sm rounded-full hover:bg-white/10 transition-all duration-300"
+            >
+              View Treatments
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            className="mt-12 flex items-center justify-center gap-6 text-white/50 text-xs uppercase tracking-widest"
+          >
+            <span>BAcC Member</span>
+            <span className="w-1 h-1 bg-accent rounded-full" />
+            <span>AFN Member</span>
+            <span className="w-1 h-1 bg-accent rounded-full" />
+            <span>Dr Vodder Method</span>
+          </motion.div>
+        </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <ChevronDown className="text-white/40" size={24} />
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading
+            subtitle="What I Treat"
+            title="Holistic Treatment Areas"
+            description="Whether you're seeking pain relief, emotional balance, or skin rejuvenation, I offer personalised treatments tailored to your unique needs."
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, i) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className={`group p-8 rounded-2xl bg-gradient-to-br ${service.color} hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-default`}
+              >
+                <div
+                  className={`w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${service.iconColor}`}
+                >
+                  <service.icon size={24} />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Preview */}
+      <section className="py-24 px-6 bg-warm">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="relative">
+              <div className="w-full aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
+                <div className="text-center p-8">
+                  <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6">
+                    <span className="text-5xl text-white font-light" style={{ fontFamily: "'Playfair Display', serif" }}>IA</span>
+                  </div>
+                  <p className="text-primary/60 text-sm italic">Iris Abdele</p>
+                  <p className="text-primary/40 text-xs mt-1">BSc, MBAcC, AFN</p>
+                </div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/10 rounded-2xl -z-10" />
+              <div className="absolute -top-6 -left-6 w-24 h-24 border-2 border-primary/10 rounded-2xl -z-10" />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="text-accent uppercase tracking-[0.3em] text-sm font-semibold mb-3">
+              About Me
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-light text-gray-900 leading-tight mb-6"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Dedicated to Your
+              <br />
+              <span className="italic">Wellbeing</span>
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              I am a qualified acupuncturist and advanced facialist, and a proud
+              member of the British Acupuncture Council. With extensive training
+              in Traditional Chinese Medicine, I offer holistic treatments that
+              address both physical and emotional wellbeing.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-8">
+              My practice in Richmond combines ancient healing wisdom with
+              modern techniques, including the Dr Vodder method of Manual
+              Lymphatic Drainage, to provide personalised care for each client.
+            </p>
+            <Link
+              href="/about"
+              className="group inline-flex items-center gap-2 text-primary font-semibold uppercase tracking-wider text-sm hover:text-accent transition-colors"
+            >
+              Learn More About Me
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 px-6 bg-gradient-to-br from-primary via-primary-dark to-[#2d2b5e] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 20% 50%, rgba(201,169,110,0.3) 0%, transparent 50%)",
+            }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative">
+          <SectionHeading
+            subtitle="Testimonials"
+            title="What My Clients Say"
+            light
+          />
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, j) => (
+                    <Star key={j} size={16} className="text-accent fill-accent" />
+                  ))}
+                </div>
+                <p className="text-white/80 leading-relaxed mb-6 italic">
+                  &ldquo;{testimonial.text}&rdquo;
+                </p>
+                <p className="text-accent font-semibold text-sm">
+                  {testimonial.author}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 px-6 bg-warm">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-accent uppercase tracking-[0.3em] text-sm font-semibold mb-3">
+              Ready to Begin?
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-light text-gray-900 leading-tight mb-6"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Start Your Healing Journey
+            </h2>
+            <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto">
+              Book a free initial consultation to discuss your concerns and
+              discover how acupuncture and holistic treatments can help you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-primary text-white uppercase tracking-wider text-sm rounded-full hover:bg-primary-dark transition-all duration-300 hover:shadow-lg"
+              >
+                Book a Consultation
+              </Link>
+              <a
+                href="tel:+447392721777"
+                className="flex items-center justify-center gap-2 px-8 py-4 border border-primary/20 text-primary uppercase tracking-wider text-sm rounded-full hover:bg-primary/5 transition-all"
+              >
+                <Phone size={16} />
+                Call Me
+              </a>
+            </div>
+            <div className="mt-8">
+              <a
+                href="https://www.instagram.com/iris.acu.ldn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm"
+              >
+                <Instagram size={16} />
+                Follow @iris.acu.ldn
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
+  );
+}
