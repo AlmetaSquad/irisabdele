@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Facebook, Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
@@ -17,9 +18,18 @@ export default function Footer() {
               TCM Acupuncture, Manual Lymphatic Drainage &amp; Advanced Facial
               Treatments in Richmond, London.
             </p>
+            <div className="mt-4">
+              <Image
+                src="/images/signature.jpg"
+                alt="Iris Abdele signature"
+                width={120}
+                height={105}
+                className="opacity-70"
+              />
+            </div>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://www.instagram.com/iris.acu.ldn/"
+                href="https://www.instagram.com/iris.abdele.acupuncture/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors"

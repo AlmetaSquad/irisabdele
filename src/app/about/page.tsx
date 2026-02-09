@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import { ArrowRight, Award, BookOpen, Heart, Shield } from "lucide-react";
 
@@ -46,14 +47,15 @@ export default function AboutPage() {
             transition={{ duration: 0.7 }}
           >
             <div className="relative">
-              <div className="w-full aspect-square rounded-2xl bg-gradient-to-br from-primary/15 to-accent/15 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6">
-                    <span className="text-6xl text-white font-light" style={{ fontFamily: "'Playfair Display', serif" }}>IA</span>
-                  </div>
-                  <p className="text-primary font-semibold text-lg">Iris Abdele</p>
-                  <p className="text-gray-400 text-sm mt-1">BSc, MBAcC, AFN</p>
-                </div>
+              <div className="w-full aspect-square rounded-2xl overflow-hidden relative">
+                <Image
+                  src="/images/iris-portrait.jpeg"
+                  alt="Iris Abdele — Acupuncturist & Advanced Facialist"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/20 rounded-2xl -z-10" />
             </div>

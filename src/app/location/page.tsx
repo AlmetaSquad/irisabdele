@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import { MapPin, Clock, Train, Car, Mail } from "lucide-react";
 
@@ -124,6 +125,17 @@ export default function LocationPage() {
                 </a>
               </div>
             </motion.div>
+
+            {/* Area Image */}
+            <div className="relative rounded-2xl overflow-hidden aspect-[16/9]">
+              <Image
+                src="/images/nature-leaves.jpg"
+                alt="Richmond area greenery"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
 
           {/* Map */}

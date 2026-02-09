@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import {
   ArrowRight,
@@ -221,14 +222,15 @@ export default function Home() {
             transition={{ duration: 0.7 }}
           >
             <div className="relative">
-              <div className="w-full aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6">
-                    <span className="text-5xl text-white font-light" style={{ fontFamily: "'Playfair Display', serif" }}>IA</span>
-                  </div>
-                  <p className="text-primary/60 text-sm italic">Iris Abdele</p>
-                  <p className="text-primary/40 text-xs mt-1">BSc, MBAcC, AFN</p>
-                </div>
+              <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden relative">
+                <Image
+                  src="/images/iris-portrait.jpeg"
+                  alt="Iris Abdele — Acupuncturist & Advanced Facialist"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/10 rounded-2xl -z-10" />
               <div className="absolute -top-6 -left-6 w-24 h-24 border-2 border-primary/10 rounded-2xl -z-10" />
@@ -358,13 +360,13 @@ export default function Home() {
             </div>
             <div className="mt-8">
               <a
-                href="https://www.instagram.com/iris.acu.ldn/"
+                href="https://www.instagram.com/iris.abdele.acupuncture/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm"
               >
                 <Instagram size={16} />
-                Follow @iris.acu.ldn
+                Follow @iris.abdele.acupuncture
               </a>
             </div>
           </motion.div>

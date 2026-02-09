@@ -2,16 +2,57 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
-import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle, Loader2 } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    contactMethod: "email",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const whatsappText = encodeURIComponent(
+    `Hi Iris, I just submitted an enquiry via your website.\n\nName: ${formData.name}\nService: ${formData.service}\nMessage: ${formData.message}`
+  );
 
   return (
     <>
@@ -119,6 +160,17 @@ export default function ContactPage() {
                 </div>
               </motion.div>
             </div>
+
+            {/* Treatment Room Image */}
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/treatment-room.jpeg"
+                alt="Treatment room at Iris Abdele's practice"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
           </div>
 
           {/* Contact Form */}
@@ -140,23 +192,41 @@ export default function ContactPage() {
                 >
                   Thank You!
                 </h3>
-                <p className="text-gray-500">
+                <p className="text-gray-500 mb-8">
                   Your message has been sent successfully. I will get back to you
                   as soon as possible.
                 </p>
+                <a
+                  href={`https://wa.me/447464335199?text=${whatsappText}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors"
+                >
+                  <MessageCircle size={18} />
+                  Follow up on WhatsApp
+                </a>
               </div>
             ) : (
               <form
                 onSubmit={handleSubmit}
                 className="bg-warm rounded-2xl p-8 md:p-12 space-y-6"
               >
+                {error && (
+                  <div className="p-4 bg-red-50 text-red-700 rounded-xl text-sm">
+                    {error}
+                  </div>
+                )}
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                     placeholder="Your full name"
                   />
@@ -167,19 +237,22 @@ export default function ContactPage() {
                     Service of Interest
                   </label>
                   <select
+                    name="service"
                     required
+                    value={formData.service}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-gray-700"
                   >
                     <option value="">Select a service</option>
-                    <option value="initial-acupuncture">
+                    <option value="Initial Acupuncture Appointment">
                       Initial Acupuncture Appointment
                     </option>
-                    <option value="acupuncture-followup">
+                    <option value="Acupuncture Follow-up">
                       Acupuncture Follow-up
                     </option>
-                    <option value="facial">Facials &amp; Skin</option>
-                    <option value="mld">Manual Lymphatic Drainage</option>
-                    <option value="enquiry">General Enquiry</option>
+                    <option value="Facials & Skin">Facials &amp; Skin</option>
+                    <option value="Manual Lymphatic Drainage">Manual Lymphatic Drainage</option>
+                    <option value="General Enquiry">General Enquiry</option>
                   </select>
                 </div>
 
@@ -190,7 +263,10 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="email"
+                      name="email"
                       required
+                      value={formData.email}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                       placeholder="your@email.com"
                     />
@@ -201,6 +277,9 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                       placeholder="+44 ..."
                     />
@@ -217,7 +296,8 @@ export default function ContactPage() {
                         type="radio"
                         name="contactMethod"
                         value="email"
-                        defaultChecked
+                        checked={formData.contactMethod === "email"}
+                        onChange={handleChange}
                         className="w-4 h-4 text-primary focus:ring-primary"
                       />
                       <span className="text-gray-600">Email</span>
@@ -227,6 +307,8 @@ export default function ContactPage() {
                         type="radio"
                         name="contactMethod"
                         value="phone"
+                        checked={formData.contactMethod === "phone"}
+                        onChange={handleChange}
                         className="w-4 h-4 text-primary focus:ring-primary"
                       />
                       <span className="text-gray-600">Phone</span>
@@ -239,8 +321,11 @@ export default function ContactPage() {
                     Message
                   </label>
                   <textarea
+                    name="message"
                     rows={5}
                     required
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
                     placeholder="Tell me about your concerns or what you'd like help with..."
                   />
@@ -248,10 +333,20 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white uppercase tracking-wider text-sm rounded-full hover:bg-primary-dark transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
+                  disabled={loading}
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white uppercase tracking-wider text-sm rounded-full hover:bg-primary-dark transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send size={16} />
-                  Send Message
+                  {loading ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send size={16} />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             )}

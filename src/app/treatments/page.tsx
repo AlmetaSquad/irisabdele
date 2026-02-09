@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import { Clock, ArrowRight, Gift, Shield } from "lucide-react";
 
@@ -123,6 +124,30 @@ export default function TreatmentsPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Treatment Imagery */}
+      <section className="px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
+          <div className="relative rounded-2xl overflow-hidden aspect-[3/2]">
+            <Image
+              src="/images/acupuncture-treatment.jpg"
+              alt="Acupuncture treatment session"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+          <div className="relative rounded-2xl overflow-hidden aspect-[3/2]">
+            <Image
+              src="/images/acupuncture-closeup.jpg"
+              alt="Acupuncture needles close-up"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         </div>
       </section>
