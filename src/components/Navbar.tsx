@@ -42,7 +42,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="group">
-          <h1 className="text-2xl font-light tracking-widest uppercase">
+          <h1 className="text-2xl font-light tracking-widest uppercase" style={{ fontFamily: "'Bodoni Moda', serif" }}>
             <span className={`transition-colors duration-300 ${scrolled ? "text-primary" : "text-white"}`}>
               Iris
             </span>

@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h2 className="text-2xl font-light tracking-widest uppercase mb-4">
+            <h2 className="text-2xl font-light tracking-widest uppercase mb-4" style={{ fontFamily: "'Bodoni Moda', serif" }}>
               Iris <span className="font-bold text-accent">Abdele</span>
             </h2>
             <p className="text-white/70 text-sm leading-relaxed">
