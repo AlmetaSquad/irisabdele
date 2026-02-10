@@ -73,14 +73,15 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-36">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-72">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#6C63FF] via-[#5957a4] to-[#1a1a5e] animate-hero-gradient" style={{ backgroundSize: "200% 200%" }} />
+        <div className="absolute inset-0 stained-glass" />
+        <div className="absolute inset-0 animate-hero-gradient" style={{ backgroundSize: "200% 200%", background: "linear-gradient(135deg, rgba(59,56,128,0.3) 0%, rgba(26,95,158,0.2) 50%, rgba(42,39,96,0.3) 100%)" }} />
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-25"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 20% 50%, rgba(201,169,110,0.35) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(108,99,255,0.2) 0%, transparent 40%), radial-gradient(circle at 60% 80%, rgba(201,169,110,0.15) 0%, transparent 45%)",
+              "radial-gradient(circle at 20% 50%, rgba(26,95,158,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(90,87,176,0.3) 0%, transparent 40%), radial-gradient(circle at 60% 80%, rgba(40,120,194,0.25) 0%, transparent 45%)",
           }}
         />
 
@@ -98,7 +99,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-accent uppercase tracking-[0.4em] text-sm font-semibold mb-6"
           >
-            Holistic Healing &middot; Richmond, London
+            Holistic Healing &middot; London
           </motion.p>
 
           <motion.h1
@@ -277,16 +278,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 px-6 bg-gradient-to-br from-primary via-primary-dark to-[#2d2b5e] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 20% 50%, rgba(201,169,110,0.3) 0%, transparent 50%)",
-            }}
-          />
-        </div>
+      <section className="py-24 px-6 stained-glass relative overflow-hidden">
 
         <div className="max-w-7xl mx-auto relative">
           <SectionHeading

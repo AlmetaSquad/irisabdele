@@ -161,7 +161,7 @@ export default function TreatmentsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-gradient-to-br from-primary to-primary-dark text-center">
+      <section className="py-24 px-6 stained-glass text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

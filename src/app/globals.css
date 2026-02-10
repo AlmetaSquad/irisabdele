@@ -2,11 +2,11 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #5957a4;
-  --color-primary-light: #7b79c2;
-  --color-primary-dark: #3f3d7a;
-  --color-accent: #c9a96e;
-  --color-accent-light: #e0c992;
+  --color-primary: #3b3880;
+  --color-primary-light: #5a57b0;
+  --color-primary-dark: #2a2760;
+  --color-accent: #1a5f9e;
+  --color-accent-light: #2878c2;
   --color-warm: #f8f5f0;
   --color-sage: #8fa68f;
   --font-sans: "Lato", sans-serif;
@@ -31,11 +31,11 @@ html {
   background: #f8f5f0;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9a96e;
+  background: #1a5f9e;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5957a4;
+  background: #3b3880;
 }
 
 /* Animations */
@@ -64,9 +64,27 @@ html {
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(26,95,158,0.3), transparent);
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Stained glass effect for purple sections */
+.stained-glass {
+  background:
+    linear-gradient(135deg, rgba(59,56,128,0.92) 0%, rgba(42,39,96,0.95) 40%, rgba(26,30,80,0.92) 100%);
+  position: relative;
+}
+.stained-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(26,95,158,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(90,87,176,0.2) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(40,120,194,0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 70% 60%, rgba(255,255,255,0.04) 0%, transparent 30%);
+  pointer-events: none;
 }
 
 /* Glass effect */
@@ -79,7 +97,7 @@ html {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #5957a4, #c9a96e);
+  background: linear-gradient(135deg, #3b3880, #1a5f9e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
