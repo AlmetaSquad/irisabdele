@@ -15,6 +15,7 @@ const treatments = [
     duration: "Up to 90 minutes",
     highlight: true,
     image: "/images/acupuncture-treatment.jpg",
+    insurance: true,
   },
   {
     title: "Acupuncture Follow-Up",
@@ -24,6 +25,7 @@ const treatments = [
     duration: "Up to 60 minutes",
     highlight: false,
     image: "/images/acupuncture-closeup.jpg",
+    insurance: true,
   },
   {
     title: "Facial Massage",
@@ -51,7 +53,7 @@ const treatments = [
     duration: "60 minutes",
     highlight: false,
     image: "/images/mld-followup.webp",
-    imageClass: "-scale-x-100 hue-rotate-15 blur-[1px] brightness-90",
+    imageClass: "-scale-x-100 hue-rotate-15 blur-[2px] brightness-75",
   },
   {
     title: "Manual Lymphatic Drainage — Follow-Up",
@@ -61,7 +63,7 @@ const treatments = [
     duration: "60 minutes",
     highlight: false,
     image: "/images/mld-followup.webp",
-    imageClass: "blur-[1px] brightness-90",
+    imageClass: "blur-[2px] brightness-75",
   },
 ];
 
@@ -114,6 +116,12 @@ export default function TreatmentsPage() {
                       {treatment.duration}
                     </div>
                   </div>
+                  {(treatment as any).insurance && (
+                    <div className="flex items-center gap-1.5 mt-3 text-xs text-white/50">
+                      <Shield size={12} />
+                      Insurance coverage available through BAcC membership.
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}

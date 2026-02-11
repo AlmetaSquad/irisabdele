@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { Instagram } from "lucide-react";
 
@@ -12,7 +11,7 @@ export default function Footer() {
       {/* Stars */}
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.7) 50%, transparent 50%), radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,0.5) 50%, transparent 50%), radial-gradient(1.5px 1.5px at 50% 15%, rgba(255,255,255,0.8) 50%, transparent 50%), radial-gradient(1px 1px at 70% 45%, rgba(255,255,255,0.6) 50%, transparent 50%), radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.7) 50%, transparent 50%), radial-gradient(1.5px 1.5px at 15% 85%, rgba(255,255,255,0.5) 50%, transparent 50%), radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.6) 50%, transparent 50%), radial-gradient(1px 1px at 40% 40%, rgba(255,255,255,0.4) 50%, transparent 50%), radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,0.7) 50%, transparent 50%), radial-gradient(1.5px 1.5px at 25% 35%, rgba(255,255,255,0.6) 50%, transparent 50%)" }} />
       <div className="relative max-w-7xl mx-auto px-6 py-10">
-        <div className="grid md:grid-cols-5 gap-10">
+        <div className="grid md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
             <Image
@@ -41,27 +40,6 @@ export default function Footer() {
                 Follow @iris.abdele.acupuncture
               </a>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-accent font-semibold uppercase tracking-wider text-sm mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
-              {["About", "Treatments", "FAQs", "Location", "Contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <Link
-                      href={`/${item.toLowerCase()}`}
-                      className="text-white/70 hover:text-white transition-colors text-sm"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                )
-              )}
-            </ul>
           </div>
 
           {/* Treatments */}
@@ -122,11 +100,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
-          <p>&copy; {new Date().getFullYear()} Iris Abdele. All rights reserved.</p>
-          <p>Member of the British Acupuncture Council &middot; AFN Member</p>
-        </div>
       </div>
     </footer>
   );
