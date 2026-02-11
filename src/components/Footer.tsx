@@ -90,8 +90,33 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Accreditation Logos */}
+        <div className="mt-12 pt-8 border-t border-white/10 flex items-center justify-center gap-8 flex-wrap">
+          <Image
+            src="/images/bacc-member.png"
+            alt="British Acupuncture Council Member"
+            width={200}
+            height={80}
+            className="h-12 w-auto brightness-0 invert opacity-80"
+          />
+          <Image
+            src="/images/psa-accredited.webp"
+            alt="Professional Standards Authority — Accredited Register"
+            width={200}
+            height={80}
+            className="h-12 w-auto brightness-0 invert opacity-80"
+          />
+          <Image
+            src="/images/dr-vodder-uk.webp"
+            alt="Dr. Vodder School UK"
+            width={200}
+            height={80}
+            className="h-12 w-auto brightness-0 invert opacity-80"
+          />
+        </div>
+
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
+        <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
           <p>&copy; {new Date().getFullYear()} Iris Abdele. All rights reserved.</p>
           <p>Member of the British Acupuncture Council &middot; AFN Member</p>
         </div>
