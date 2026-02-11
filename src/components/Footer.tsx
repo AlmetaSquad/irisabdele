@@ -14,14 +14,10 @@ export default function Footer() {
             <Image
               src="/images/logo-ia.png"
               alt="Iris Abdele — Mind Body Skin"
-              width={320}
-              height={106}
-              className="h-24 w-auto brightness-0 invert mb-2"
+              width={640}
+              height={212}
+              className="h-48 w-auto brightness-0 invert mb-2"
             />
-            <p className="text-white/70 text-sm leading-relaxed">
-              TCM Acupuncture, Manual Lymphatic Drainage &amp; Advanced Facial
-              Treatments in Richmond, London.
-            </p>
             <div className="flex gap-4 mt-6">
               <a
                 href="https://www.instagram.com/iris.abdele.acupuncture/"
