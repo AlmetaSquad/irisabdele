@@ -6,8 +6,12 @@ import { Instagram, Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#5b2d8e] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer className="relative text-white overflow-hidden" style={{ background: "linear-gradient(135deg, #120a2e 0%, #1a0f3d 25%, #0e1a3a 50%, #1a0f3d 75%, #0a0d28 100%)" }}>
+      {/* Space glow */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 20% 50%, rgba(90,40,160,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 30%, rgba(30,60,140,0.12) 0%, transparent 45%), radial-gradient(ellipse at 50% 80%, rgba(70,30,130,0.1) 0%, transparent 40%)" }} />
+      {/* Stars */}
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.7) 50%, transparent 50%), radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,0.5) 50%, transparent 50%), radial-gradient(1.5px 1.5px at 50% 15%, rgba(255,255,255,0.8) 50%, transparent 50%), radial-gradient(1px 1px at 70% 45%, rgba(255,255,255,0.6) 50%, transparent 50%), radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.7) 50%, transparent 50%), radial-gradient(1.5px 1.5px at 15% 85%, rgba(255,255,255,0.5) 50%, transparent 50%), radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.6) 50%, transparent 50%), radial-gradient(1px 1px at 40% 40%, rgba(255,255,255,0.4) 50%, transparent 50%), radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,0.7) 50%, transparent 50%), radial-gradient(1.5px 1.5px at 25% 35%, rgba(255,255,255,0.6) 50%, transparent 50%)" }} />
+      <div className="relative max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
