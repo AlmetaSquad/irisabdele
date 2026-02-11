@@ -73,7 +73,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[230px]">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[400px]">
         {/* Background */}
         <div className="absolute inset-0 stained-glass" />
         <div className="absolute inset-0 animate-hero-gradient" style={{ backgroundSize: "200% 200%", background: "linear-gradient(135deg, rgba(59,56,128,0.3) 0%, rgba(26,95,158,0.2) 50%, rgba(42,39,96,0.3) 100%)" }} />

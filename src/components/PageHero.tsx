@@ -9,7 +9,7 @@ interface PageHeroProps {
 
 export default function PageHero({ title, subtitle }: PageHeroProps) {
   return (
-    <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden pt-[230px] pb-16 stained-glass">
+    <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden pt-[400px] pb-16 stained-glass">
       {/* Decorative circles */}
       <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5 animate-float" />
       <div className="absolute bottom-10 left-10 w-40 h-40 rounded-full border border-accent/10" />
