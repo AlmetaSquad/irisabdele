@@ -14,9 +14,9 @@ export default function Footer() {
             <Image
               src="/images/logo-ia.png"
               alt="Iris Abdele — Mind Body Skin"
-              width={160}
-              height={53}
-              className="h-12 w-auto brightness-0 invert mb-2"
+              width={320}
+              height={106}
+              className="h-24 w-auto brightness-0 invert mb-2"
             />
             <p className="text-white/70 text-sm leading-relaxed">
               TCM Acupuncture, Manual Lymphatic Drainage &amp; Advanced Facial
