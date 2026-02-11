@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import { Clock, ArrowRight, Gift, Shield } from "lucide-react";
 
@@ -13,6 +14,8 @@ const treatments = [
     price: "£90",
     duration: "Up to 90 minutes",
     highlight: true,
+    image: "/images/acupuncture-treatment.jpg",
+    insurance: true,
   },
   {
     title: "Acupuncture Follow-Up",
@@ -21,6 +24,8 @@ const treatments = [
     price: "£70",
     duration: "Up to 60 minutes",
     highlight: false,
+    image: "/images/acupuncture-closeup.jpg",
+    insurance: true,
   },
   {
     title: "Facial Massage",
@@ -29,6 +34,7 @@ const treatments = [
     price: "£55",
     duration: "30 minutes",
     highlight: false,
+    image: "/images/wellness-healing.jpg",
   },
   {
     title: "Cosmetic Acupuncture",
@@ -37,6 +43,7 @@ const treatments = [
     price: "Enquire",
     duration: "90 minutes",
     highlight: true,
+    image: "/images/cosmetic-acupuncture.webp",
   },
   {
     title: "Manual Lymphatic Drainage — Initial",
@@ -45,6 +52,8 @@ const treatments = [
     price: "£125",
     duration: "60 minutes",
     highlight: false,
+    image: "/images/mld-followup.webp",
+    imageClass: "-scale-x-100 hue-rotate-15 blur-[2px] brightness-75",
   },
   {
     title: "Manual Lymphatic Drainage — Follow-Up",
@@ -53,6 +62,8 @@ const treatments = [
     price: "£85",
     duration: "60 minutes",
     highlight: false,
+    image: "/images/mld-followup.webp",
+    imageClass: "blur-[2px] brightness-75",
   },
 ];
 
@@ -61,7 +72,6 @@ export default function TreatmentsPage() {
     <>
       <PageHero
         title="Treatments & Prices"
-        subtitle="Personalised care for your unique needs"
       />
 
       {/* Treatments Grid */}
@@ -75,51 +85,42 @@ export default function TreatmentsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${
-                  treatment.highlight
-                    ? "bg-gradient-to-br from-primary to-primary-dark text-white shadow-xl"
-                    : "bg-white border border-gray-100 shadow-sm"
-                }`}
+                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl shadow-lg min-h-[380px] flex flex-col"
               >
-                {treatment.highlight && (
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-accent text-white text-xs uppercase tracking-wider rounded-full">
-                    Popular
-                  </div>
-                )}
-                <div className="p-8">
-                  <h3
-                    className={`text-xl font-semibold mb-4 ${
-                      treatment.highlight ? "text-white" : "text-gray-900"
-                    }`}
-                  >
+                <Image
+                  src={treatment.image}
+                  alt={treatment.title}
+                  fill
+                  className={`object-cover ${(treatment as any).imageClass || "transition-transform duration-700 group-hover:scale-105"}`}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className={`absolute inset-0 ${
+                  treatment.highlight
+                    ? "bg-gradient-to-b from-primary/70 via-primary-dark/80 to-primary-dark/90"
+                    : "bg-gradient-to-b from-black/40 via-black/55 to-black/75"
+                }`} />
+                <div className="relative p-8 flex flex-col flex-1 justify-end">
+                  <h3 className="text-xl font-semibold mb-3 text-white">
                     {treatment.title}
                   </h3>
-                  <p
-                    className={`text-sm leading-relaxed mb-6 ${
-                      treatment.highlight ? "text-white/80" : "text-gray-500"
-                    }`}
-                  >
+                  <p className="text-sm leading-relaxed mb-6 text-white/80">
                     {treatment.description}
                   </p>
-                  <div className="flex items-center justify-between pt-6 border-t border-white/20">
-                    <div>
-                      <p
-                        className={`text-2xl font-bold ${
-                          treatment.highlight ? "text-accent" : "text-primary"
-                        }`}
-                      >
-                        {treatment.price}
-                      </p>
-                    </div>
-                    <div
-                      className={`flex items-center gap-1.5 text-sm ${
-                        treatment.highlight ? "text-white/60" : "text-gray-400"
-                      }`}
-                    >
+                  <div className="flex items-center justify-between pt-4 border-t border-white/20">
+                    <p className="text-2xl font-bold text-white">
+                      {treatment.price}
+                    </p>
+                    <div className="flex items-center gap-1.5 text-sm text-white/60">
                       <Clock size={14} />
                       {treatment.duration}
                     </div>
                   </div>
+                  {(treatment as any).insurance && (
+                    <div className="flex items-center gap-1.5 mt-3 text-xs text-white/50">
+                      <Shield size={12} />
+                      Insurance coverage available through BAcC membership.
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -164,7 +165,7 @@ export default function TreatmentsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-gradient-to-br from-primary to-primary-dark text-center">
+      <section className="py-24 px-6 night-sky text-center relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -183,7 +184,7 @@ export default function TreatmentsPage() {
           </p>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-accent text-white uppercase tracking-wider text-sm rounded-full hover:bg-accent-light transition-all"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-accent/60 backdrop-blur-sm text-white uppercase tracking-wider text-sm rounded-full hover:bg-accent/80 transition-all"
           >
             Book Now
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

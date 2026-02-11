@@ -9,19 +9,7 @@ interface PageHeroProps {
 
 export default function PageHero({ title, subtitle }: PageHeroProps) {
   return (
-    <section className="relative h-[45vh] min-h-[340px] flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-dark to-primary" />
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 30% 50%, rgba(201,169,110,0.3) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 40%)",
-          }}
-        />
-      </div>
-
+    <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden pt-[240px] pb-16 night-sky">
       {/* Decorative circles */}
       <div className="absolute top-10 right-10 w-64 h-64 rounded-full border border-white/5 animate-float" />
       <div className="absolute bottom-10 left-10 w-40 h-40 rounded-full border border-accent/10" />

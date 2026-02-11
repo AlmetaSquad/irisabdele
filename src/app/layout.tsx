@@ -2,19 +2,33 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import ImageProtection from "@/components/ImageProtection";
 
 export const metadata: Metadata = {
-  title: "Iris Abdele | Acupuncture & Advanced Facials | Richmond, London",
+  title: {
+    default: "Iris Abdele — TCM Acupuncture & Advanced Facials | Richmond, London",
+    template: "%s | Iris Abdele",
+  },
   description:
-    "Iris Abdele offers Traditional Chinese Medicine acupuncture, manual lymphatic drainage, and advanced facial treatments in Richmond, London. Member of the British Acupuncture Council.",
-  keywords:
-    "acupuncture, TCM, manual lymphatic drainage, facial treatments, Richmond, London, Iris Abdele, British Acupuncture Council",
+    "Qualified acupuncturist and advanced facialist in Richmond, London. TCM acupuncture, manual lymphatic drainage, cosmetic acupuncture and facial treatments. BAcC member.",
+  keywords: [
+    "acupuncture Richmond",
+    "acupuncture London",
+    "TCM",
+    "facial treatments Richmond",
+    "manual lymphatic drainage",
+    "cosmetic acupuncture",
+    "MLD Richmond",
+  ],
   openGraph: {
-    title: "Iris Abdele | Acupuncture & Advanced Facials",
+    title: "Iris Abdele — TCM Acupuncture & Advanced Facials",
     description:
-      "Traditional Chinese Medicine acupuncture, manual lymphatic drainage, and advanced facials in Richmond, London.",
-    type: "website",
+      "Holistic healing in Richmond, London. TCM acupuncture, manual lymphatic drainage, cosmetic acupuncture and advanced facial treatments.",
+    url: "https://irisabdele.com",
+    siteName: "Iris Abdele",
     locale: "en_GB",
+    type: "website",
   },
 };
 
@@ -29,6 +43,8 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <WhatsAppButton />
+        <ImageProtection />
       </body>
     </html>
   );

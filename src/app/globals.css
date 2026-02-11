@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #5957a4;
-  --color-primary-light: #7b79c2;
-  --color-primary-dark: #3f3d7a;
-  --color-accent: #c9a96e;
-  --color-accent-light: #e0c992;
-  --color-warm: #f8f5f0;
+  --color-primary: #3b3880;
+  --color-primary-light: #5a57b0;
+  --color-primary-dark: #2a2760;
+  --color-accent: #1a5f9e;
+  --color-accent-light: #2878c2;
+  --color-warm: #f5f5f5;
   --color-sage: #8fa68f;
   --font-sans: "Lato", sans-serif;
 }
@@ -23,22 +23,43 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Protect images from copying */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+a img, button img {
+  pointer-events: auto;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8f5f0;
+  background: #f5f5f5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9a96e;
+  background: #1a5f9e;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5957a4;
+  background: #3b3880;
 }
 
 /* Animations */
+@keyframes hero-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-hero-gradient {
+  animation: hero-gradient 12s ease-in-out infinite;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -54,9 +75,92 @@ html {
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(26,95,158,0.3), transparent);
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Stained glass effect for purple sections */
+.stained-glass {
+  background:
+    linear-gradient(135deg, rgba(59,56,128,0.92) 0%, rgba(42,39,96,0.95) 40%, rgba(26,30,80,0.92) 100%);
+  position: relative;
+}
+.stained-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(26,95,158,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(90,87,176,0.2) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(40,120,194,0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 70% 60%, rgba(255,255,255,0.04) 0%, transparent 30%);
+  pointer-events: none;
+}
+
+/* Night sky effect */
+.night-sky {
+  background: linear-gradient(180deg, #050d1a 0%, #0a1628 30%, #0e1f3d 60%, #091428 100%);
+}
+.night-sky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 20%, rgba(30,60,120,0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 60%, rgba(20,50,100,0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 85%, rgba(25,45,90,0.12) 0%, transparent 40%);
+  pointer-events: none;
+}
+.night-sky::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 5% 8%, #fff 50%, transparent 50%),
+    radial-gradient(1px 1px at 12% 45%, #fff 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 18% 22%, #fff 50%, transparent 50%),
+    radial-gradient(1px 1px at 24% 72%, rgba(255,255,255,0.8) 50%, transparent 50%),
+    radial-gradient(1px 1px at 30% 12%, #fff 50%, transparent 50%),
+    radial-gradient(2px 2px at 35% 55%, rgba(255,255,255,0.9) 50%, transparent 50%),
+    radial-gradient(1px 1px at 42% 35%, rgba(255,255,255,0.7) 50%, transparent 50%),
+    radial-gradient(1px 1px at 48% 82%, #fff 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 55% 18%, rgba(255,255,255,0.85) 50%, transparent 50%),
+    radial-gradient(1px 1px at 60% 65%, rgba(255,255,255,0.7) 50%, transparent 50%),
+    radial-gradient(1px 1px at 67% 40%, #fff 50%, transparent 50%),
+    radial-gradient(2px 2px at 72% 10%, rgba(255,255,255,0.9) 50%, transparent 50%),
+    radial-gradient(1px 1px at 78% 58%, rgba(255,255,255,0.75) 50%, transparent 50%),
+    radial-gradient(1px 1px at 83% 30%, #fff 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 88% 75%, rgba(255,255,255,0.8) 50%, transparent 50%),
+    radial-gradient(1px 1px at 93% 48%, rgba(255,255,255,0.7) 50%, transparent 50%),
+    radial-gradient(1px 1px at 8% 90%, rgba(255,255,255,0.8) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 15% 62%, rgba(255,255,255,0.85) 50%, transparent 50%),
+    radial-gradient(1px 1px at 22% 38%, rgba(255,255,255,0.6) 50%, transparent 50%),
+    radial-gradient(2px 2px at 28% 88%, rgba(255,255,255,0.9) 50%, transparent 50%),
+    radial-gradient(1px 1px at 38% 5%, #fff 50%, transparent 50%),
+    radial-gradient(1px 1px at 45% 52%, rgba(255,255,255,0.7) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 52% 92%, rgba(255,255,255,0.8) 50%, transparent 50%),
+    radial-gradient(1px 1px at 58% 28%, rgba(255,255,255,0.75) 50%, transparent 50%),
+    radial-gradient(1px 1px at 65% 78%, #fff 50%, transparent 50%),
+    radial-gradient(1px 1px at 75% 42%, rgba(255,255,255,0.65) 50%, transparent 50%),
+    radial-gradient(2px 2px at 80% 88%, rgba(255,255,255,0.9) 50%, transparent 50%),
+    radial-gradient(1px 1px at 90% 15%, rgba(255,255,255,0.8) 50%, transparent 50%),
+    radial-gradient(1px 1px at 96% 68%, rgba(255,255,255,0.7) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 3% 55%, rgba(255,255,255,0.85) 50%, transparent 50%),
+    radial-gradient(1px 1px at 33% 95%, #fff 50%, transparent 50%),
+    radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.6) 50%, transparent 50%),
+    radial-gradient(1px 1px at 50% 48%, rgba(255,255,255,0.5) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 85% 52%, rgba(255,255,255,0.8) 50%, transparent 50%),
+    radial-gradient(1px 1px at 40% 68%, rgba(255,255,255,0.7) 50%, transparent 50%),
+    radial-gradient(1px 1px at 62% 8%, rgba(255,255,255,0.9) 50%, transparent 50%);
+  pointer-events: none;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
 }
 
 /* Glass effect */
@@ -69,7 +173,7 @@ html {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #5957a4, #c9a96e);
+  background: linear-gradient(135deg, #3b3880, #1a5f9e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

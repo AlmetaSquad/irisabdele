@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import {
   ArrowRight,
@@ -10,8 +11,7 @@ import {
   Brain,
   Leaf,
   Star,
-  Phone,
-  Instagram,
+  MessageCircle,
   ChevronDown,
 } from "lucide-react";
 
@@ -72,22 +72,9 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-dark to-[#2d2b5e]" />
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 50%, rgba(201,169,110,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 40%), radial-gradient(circle at 60% 80%, rgba(201,169,110,0.2) 0%, transparent 45%)",
-          }}
-        />
-
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-20 w-96 h-96 rounded-full border border-white/5 animate-float" />
-        <div className="absolute bottom-32 left-16 w-48 h-48 rounded-full border border-accent/10" />
-        <div className="absolute top-1/3 left-1/4 w-2 h-2 bg-accent/40 rounded-full animate-float" />
-        <div className="absolute top-1/2 right-1/3 w-3 h-3 bg-white/10 rounded-full animate-float" style={{ animationDelay: "2s" }} />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[240px] pb-24">
+        {/* Night sky background */}
+        <div className="absolute inset-0 night-sky" />
 
         {/* Content */}
         <div className="relative text-center px-6 max-w-4xl mx-auto">
@@ -97,7 +84,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-accent uppercase tracking-[0.4em] text-sm font-semibold mb-6"
           >
-            Holistic Healing &middot; Richmond, London
+            Holistic Healing &middot; London
           </motion.p>
 
           <motion.h1
@@ -107,11 +94,11 @@ export default function Home() {
             className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            TCM Acupuncture
+            TCM Acupuncture,
             <br />
-            <span className="italic text-accent">&amp;</span> Manual Lymphatic
+            Lymphatic Drainage
             <br />
-            Drainage
+            <span className="italic text-accent">&amp;</span> Facials
           </motion.h1>
 
           <motion.p
@@ -132,7 +119,7 @@ export default function Home() {
           >
             <Link
               href="/contact"
-              className="group px-8 py-4 bg-accent text-white uppercase tracking-wider text-sm rounded-full hover:bg-accent-light transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 flex items-center justify-center gap-2"
+              className="group px-8 py-4 bg-accent/60 backdrop-blur-sm text-white uppercase tracking-wider text-sm rounded-full hover:bg-accent/80 transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 flex items-center justify-center gap-2"
             >
               Book a Consultation
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -145,18 +132,6 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 1 }}
-            className="mt-12 flex items-center justify-center gap-6 text-white/50 text-xs uppercase tracking-widest"
-          >
-            <span>BAcC Member</span>
-            <span className="w-1 h-1 bg-accent rounded-full" />
-            <span>AFN Member</span>
-            <span className="w-1 h-1 bg-accent rounded-full" />
-            <span>Dr Vodder Method</span>
-          </motion.div>
         </div>
 
         {/* Scroll indicator */}
@@ -221,14 +196,15 @@ export default function Home() {
             transition={{ duration: 0.7 }}
           >
             <div className="relative">
-              <div className="w-full aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6">
-                    <span className="text-5xl text-white font-light" style={{ fontFamily: "'Playfair Display', serif" }}>IA</span>
-                  </div>
-                  <p className="text-primary/60 text-sm italic">Iris Abdele</p>
-                  <p className="text-primary/40 text-xs mt-1">BSc, MBAcC, AFN</p>
-                </div>
+              <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden relative">
+                <Image
+                  src="/images/iris-portrait.jpeg"
+                  alt="Iris Abdele — Acupuncturist & Advanced Facialist"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/10 rounded-2xl -z-10" />
               <div className="absolute -top-6 -left-6 w-24 h-24 border-2 border-primary/10 rounded-2xl -z-10" />
@@ -275,16 +251,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 px-6 bg-gradient-to-br from-primary via-primary-dark to-[#2d2b5e] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 20% 50%, rgba(201,169,110,0.3) 0%, transparent 50%)",
-            }}
-          />
-        </div>
+      <section className="py-24 px-6 night-sky relative overflow-hidden">
 
         <div className="max-w-7xl mx-auto relative">
           <SectionHeading
@@ -349,22 +316,13 @@ export default function Home() {
                 Book a Consultation
               </Link>
               <a
-                href="tel:+447392721777"
-                className="flex items-center justify-center gap-2 px-8 py-4 border border-primary/20 text-primary uppercase tracking-wider text-sm rounded-full hover:bg-primary/5 transition-all"
-              >
-                <Phone size={16} />
-                Call Me
-              </a>
-            </div>
-            <div className="mt-8">
-              <a
-                href="https://www.instagram.com/iris.acu.ldn/"
+                href="https://wa.me/447464335199"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm"
+                className="flex items-center justify-center gap-2 px-8 py-4 border border-primary/20 text-primary uppercase tracking-wider text-sm rounded-full hover:bg-primary/5 transition-all"
               >
-                <Instagram size={16} />
-                Follow @iris.acu.ldn
+                <MessageCircle size={16} />
+                Message Me
               </a>
             </div>
           </motion.div>
