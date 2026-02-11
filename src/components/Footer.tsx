@@ -22,7 +22,7 @@ export default function Footer() {
               height={212}
               className="h-48 w-auto brightness-0 invert mb-2"
             />
-            <div className="flex gap-4 mt-6">
+            <div className="flex items-center gap-4 mt-6">
               <a
                 href="https://www.instagram.com/iris.abdele.acupuncture/"
                 target="_blank"
@@ -31,6 +31,14 @@ export default function Footer() {
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
+              </a>
+              <a
+                href="https://www.instagram.com/iris.abdele.acupuncture/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-[#a855f7] transition-colors text-sm"
+              >
+                Follow @iris.abdele.acupuncture
               </a>
             </div>
           </div>

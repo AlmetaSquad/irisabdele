@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
-import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle, Loader2 } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Send, CheckCircle, Loader2 } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -79,29 +79,11 @@ export default function ContactPage() {
               </h2>
               <p className="text-gray-500 leading-relaxed">
                 For appointments and enquiries, please contact me directly via
-                email, telephone, WhatsApp, or the contact form.
+                email, WhatsApp, or the contact form.
               </p>
             </div>
 
             <div className="space-y-6">
-              <motion.a
-                href="tel:+447464335199"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-4 group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all text-primary">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-400">Phone</p>
-                  <p className="text-gray-700 font-medium group-hover:text-primary transition-colors">
-                    +44 (0)7464 335199
-                  </p>
-                </div>
-              </motion.a>
-
               <motion.a
                 href="mailto:bookings@irisabdele.com"
                 initial={{ opacity: 0, x: -20 }}

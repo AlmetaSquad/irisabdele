@@ -11,8 +11,7 @@ import {
   Brain,
   Leaf,
   Star,
-  Phone,
-  Instagram,
+  MessageCircle,
   ChevronDown,
 } from "lucide-react";
 
@@ -99,7 +98,7 @@ export default function Home() {
             <br />
             Lymphatic Drainage
             <br />
-            <span className="italic text-accent">&amp;</span> More
+            <span className="italic text-accent">&amp;</span> Facials
           </motion.h1>
 
           <motion.p
@@ -329,35 +328,14 @@ export default function Home() {
                 Book a Consultation
               </Link>
               <a
-                href="tel:+447464335199"
-                className="flex items-center justify-center gap-2 px-8 py-4 border border-primary/20 text-primary uppercase tracking-wider text-sm rounded-full hover:bg-primary/5 transition-all"
-              >
-                <Phone size={16} />
-                Call Me
-              </a>
-            </div>
-            <div className="mt-8 flex items-center gap-4">
-              <a
-                href="https://www.instagram.com/iris.abdele.acupuncture/"
+                href="https://wa.me/447464335199"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-[#a855f7] transition-colors text-sm"
+                className="flex items-center justify-center gap-2 px-8 py-4 border border-primary/20 text-primary uppercase tracking-wider text-sm rounded-full hover:bg-primary/5 transition-all"
               >
-                <Instagram size={16} />
-                Follow @iris.abdele.acupuncture
+                <MessageCircle size={16} />
+                Message Me
               </a>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="16" height="16">
-                <defs>
-                  <clipPath id="yin-yang-circle">
-                    <circle cx="32" cy="32" r="30"/>
-                  </clipPath>
-                </defs>
-                <circle cx="32" cy="32" r="30" fill="#1a5f9e"/>
-                <path d="M32,2 A30,30 0 0,1 32,62 A15,15 0 0,1 32,32 A15,15 0 0,0 32,2 Z" fill="#2d1b69" clipPath="url(#yin-yang-circle)"/>
-                <circle cx="32" cy="47" r="5" fill="#1a5f9e"/>
-                <circle cx="32" cy="17" r="5" fill="#2d1b69"/>
-                <circle cx="32" cy="32" r="30" fill="none" stroke="#0a1628" strokeWidth="2"/>
-              </svg>
             </div>
           </motion.div>
         </div>
