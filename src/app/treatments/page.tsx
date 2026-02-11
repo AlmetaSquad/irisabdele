@@ -72,7 +72,6 @@ export default function TreatmentsPage() {
     <>
       <PageHero
         title="Treatments & Prices"
-        subtitle="Personalised care for your unique needs"
       />
 
       {/* Treatments Grid */}
