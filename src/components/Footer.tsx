@@ -95,28 +95,28 @@ export default function Footer() {
               Accreditations
             </h3>
             <div className="flex flex-col gap-4">
-              <div className="bg-white rounded-md px-3 py-2 w-fit">
+              <div className="bg-white rounded-md px-2 py-1 w-fit">
                 <Image
                   src="/images/bacc-member.png"
                   alt="British Acupuncture Council Member"
-                  width={200}
-                  height={80}
-                  className="h-8 w-auto"
+                  width={120}
+                  height={48}
+                  className="w-[100px] h-auto"
                 />
               </div>
               <Image
                 src="/images/psa-accredited.webp"
                 alt="Professional Standards Authority — Accredited Register"
-                width={200}
+                width={120}
                 height={80}
-                className="h-8 w-auto"
+                className="w-[100px] h-auto"
               />
               <Image
                 src="/images/dr-vodder-uk.webp"
                 alt="Dr. Vodder School UK"
-                width={200}
-                height={200}
-                className="h-8 w-auto"
+                width={80}
+                height={80}
+                className="w-[70px] h-auto"
               />
             </div>
           </div>
