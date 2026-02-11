@@ -50,7 +50,8 @@ const treatments = [
     price: "£125",
     duration: "60 minutes",
     highlight: false,
-    image: "/images/cloud-calm.jpg",
+    image: "/images/mld-followup.webp",
+    imageClass: "-scale-x-100 hue-rotate-15",
   },
   {
     title: "Manual Lymphatic Drainage — Follow-Up",
@@ -88,7 +89,7 @@ export default function TreatmentsPage() {
                   src={treatment.image}
                   alt={treatment.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className={`object-cover transition-transform duration-700 group-hover:scale-105 ${(treatment as any).imageClass || ""}`}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className={`absolute inset-0 ${
