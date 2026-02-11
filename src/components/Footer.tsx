@@ -92,13 +92,15 @@ export default function Footer() {
 
         {/* Accreditation Logos */}
         <div className="mt-12 pt-8 border-t border-white/10 flex items-center justify-center gap-8 flex-wrap">
-          <Image
-            src="/images/bacc-member.png"
-            alt="British Acupuncture Council Member"
-            width={200}
-            height={80}
-            className="h-12 w-auto"
-          />
+          <div className="bg-white rounded-md px-3 py-2">
+            <Image
+              src="/images/bacc-member.png"
+              alt="British Acupuncture Council Member"
+              width={200}
+              height={80}
+              className="h-10 w-auto"
+            />
+          </div>
           <Image
             src="/images/psa-accredited.webp"
             alt="Professional Standards Authority — Accredited Register"
@@ -109,8 +111,8 @@ export default function Footer() {
           <Image
             src="/images/dr-vodder-uk.webp"
             alt="Dr. Vodder School UK"
-            width={200}
-            height={80}
+            width={120}
+            height={120}
             className="h-12 w-auto"
           />
         </div>
