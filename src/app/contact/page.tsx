@@ -216,7 +216,7 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Service of Interest
+                    Location of Interest
                   </label>
                   <select
                     name="service"
@@ -225,16 +225,10 @@ export default function ContactPage() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-gray-700"
                   >
-                    <option value="">Select a service</option>
-                    <option value="Initial Acupuncture Appointment">
-                      Initial Acupuncture Appointment
-                    </option>
-                    <option value="Acupuncture Follow-up">
-                      Acupuncture Follow-up
-                    </option>
-                    <option value="Facials & Skin">Facials &amp; Skin</option>
-                    <option value="Manual Lymphatic Drainage">Manual Lymphatic Drainage</option>
-                    <option value="General Enquiry">General Enquiry</option>
+                    <option value="">Select a location</option>
+                    <option value="Richmond">Richmond</option>
+                    <option value="Clapham">Clapham</option>
+                    <option value="Sutton">Sutton</option>
                   </select>
                 </div>
 
