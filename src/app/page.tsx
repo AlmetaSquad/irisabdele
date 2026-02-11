@@ -132,18 +132,6 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 1 }}
-            className="mt-12 flex items-center justify-center gap-6 text-white/50 text-xs uppercase tracking-widest"
-          >
-            <span>BAcC Member</span>
-            <span className="w-1 h-1 bg-accent rounded-full" />
-            <span>AFN Member</span>
-            <span className="w-1 h-1 bg-accent rounded-full" />
-            <span>Dr Vodder Method</span>
-          </motion.div>
         </div>
 
         {/* Scroll indicator */}
