@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Phone, Mail, MapPin } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -74,32 +74,18 @@ export default function Footer() {
               <li>Manual Lymphatic Drainage</li>
               <li>Cosmetic Acupuncture</li>
               <li>Facial Massage</li>
-              <li>Acu-Facials</li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Locations */}
           <div>
             <h3 className="text-accent font-semibold uppercase tracking-wider text-sm mb-4">
-              Get in Touch
+              Locations
             </h3>
-            <ul className="space-y-4 text-sm text-white/70">
-              <li className="flex items-start gap-3">
-                <MapPin size={16} className="mt-0.5 flex-shrink-0 text-accent" />
-                50 Hill Rise, Richmond, London
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={16} className="flex-shrink-0 text-accent" />
-                <a href="tel:+447464335199" className="hover:text-white transition-colors">
-                  +44 (0)7464 335199
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="flex-shrink-0 text-accent" />
-                <a href="mailto:bookings@irisabdele.com" className="hover:text-white transition-colors">
-                  bookings@irisabdele.com
-                </a>
-              </li>
+            <ul className="space-y-3 text-sm text-white/70">
+              <li>Richmond</li>
+              <li>Clapham</li>
+              <li>Sutton</li>
             </ul>
           </div>
         </div>
