@@ -41,7 +41,7 @@ const treatments = [
     price: "Enquire",
     duration: "90 minutes",
     highlight: true,
-    image: "/images/wellness-healing.jpg",
+    image: "/images/cosmetic-acupuncture.webp",
   },
   {
     title: "Manual Lymphatic Drainage — Initial",
