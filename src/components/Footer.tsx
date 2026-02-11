@@ -27,7 +27,7 @@ export default function Footer() {
                 href="https://www.instagram.com/iris.abdele.acupuncture/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#a855f7] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
