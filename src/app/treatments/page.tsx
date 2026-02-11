@@ -41,7 +41,7 @@ const treatments = [
     price: "Enquire",
     duration: "90 minutes",
     highlight: true,
-    image: "/images/treatment-room.jpeg",
+    image: "/images/wellness-healing.jpg",
   },
   {
     title: "Manual Lymphatic Drainage — Initial",
