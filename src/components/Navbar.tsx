@@ -18,14 +18,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     setIsOpen(false);
@@ -35,21 +28,17 @@ export default function Navbar() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-500 ${
-        scrolled ? "shadow-lg" : "shadow-sm"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm"
     >
       {/* Logo row */}
-      <div className={`flex items-center justify-center transition-all duration-500 ${
-        scrolled ? "py-2" : "py-5"
-      }`}>
+      <div className="flex items-center justify-center py-4">
         <Link href="/">
           <Image
             src="/images/logo-ia.png"
             alt="Iris Abdele — Mind Body Skin"
-            width={600}
-            height={200}
-            className={`transition-all duration-500 ${scrolled ? "h-16 w-auto" : "h-[200px] w-auto"}`}
+            width={400}
+            height={120}
+            className="h-20 w-auto"
             priority
           />
         </Link>

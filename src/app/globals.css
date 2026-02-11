@@ -7,7 +7,7 @@
   --color-primary-dark: #2a2760;
   --color-accent: #1a5f9e;
   --color-accent-light: #2878c2;
-  --color-warm: #f8f5f0;
+  --color-warm: #f5f5f5;
   --color-sage: #8fa68f;
   --font-sans: "Lato", sans-serif;
 }
@@ -28,7 +28,7 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8f5f0;
+  background: #f5f5f5;
 }
 ::-webkit-scrollbar-thumb {
   background: #1a5f9e;

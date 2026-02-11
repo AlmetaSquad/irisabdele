@@ -73,7 +73,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-72">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40">
         {/* Background */}
         <div className="absolute inset-0 stained-glass" />
         <div className="absolute inset-0 animate-hero-gradient" style={{ backgroundSize: "200% 200%", background: "linear-gradient(135deg, rgba(59,56,128,0.3) 0%, rgba(26,95,158,0.2) 50%, rgba(42,39,96,0.3) 100%)" }} />
@@ -134,7 +134,7 @@ export default function Home() {
           >
             <Link
               href="/contact"
-              className="group px-8 py-4 bg-accent text-white uppercase tracking-wider text-sm rounded-full hover:bg-accent-light transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 flex items-center justify-center gap-2"
+              className="group px-8 py-4 bg-accent/60 backdrop-blur-sm text-white uppercase tracking-wider text-sm rounded-full hover:bg-accent/80 transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 flex items-center justify-center gap-2"
             >
               Book a Consultation
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

@@ -180,7 +180,7 @@ export default function TreatmentsPage() {
           </p>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-accent text-white uppercase tracking-wider text-sm rounded-full hover:bg-accent-light transition-all"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-accent/60 backdrop-blur-sm text-white uppercase tracking-wider text-sm rounded-full hover:bg-accent/80 transition-all"
           >
             Book Now
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
