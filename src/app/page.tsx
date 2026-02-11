@@ -341,7 +341,7 @@ export default function Home() {
                 href="https://www.instagram.com/iris.abdele.acupuncture/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors text-sm"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-[#a855f7] transition-colors text-sm"
               >
                 <Instagram size={16} />
                 Follow @iris.abdele.acupuncture
