@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
-import { Mail, MapPin, MessageCircle, Send, CheckCircle, Loader2 } from "lucide-react";
+import { Mail, MessageCircle, Send, CheckCircle, Loader2 } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -124,23 +124,6 @@ export default function ContactPage() {
                 </div>
               </motion.a>
 
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="flex items-center gap-4"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                  <MapPin size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-400">Location</p>
-                  <p className="text-gray-700 font-medium">
-                    50 Hill Rise, Richmond, London
-                  </p>
-                </div>
-              </motion.div>
             </div>
 
             {/* Treatment Room Image */}
