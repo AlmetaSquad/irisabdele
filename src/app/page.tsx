@@ -95,11 +95,11 @@ export default function Home() {
             className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            TCM Acupuncture
+            TCM Acupuncture,
             <br />
-            <span className="italic text-accent">&amp;</span> Manual Lymphatic
+            Lymphatic Drainage
             <br />
-            Drainage
+            <span className="italic text-accent">&amp;</span> More
           </motion.h1>
 
           <motion.p
