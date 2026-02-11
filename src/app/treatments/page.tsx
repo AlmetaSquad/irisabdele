@@ -54,7 +54,7 @@ const treatments = [
     highlight: false,
     image: "/images/mld-followup.webp",
     imageClass: "-scale-x-100 hue-rotate-15 scale-110 brightness-50",
-    overlay: "bg-gradient-to-b from-[#2a1560]/60 via-[#1e1050]/70 to-[#150d3a]/85",
+    customOverlay: true,
   },
   {
     title: "Manual Lymphatic Drainage — Follow-Up",
@@ -65,7 +65,7 @@ const treatments = [
     highlight: false,
     image: "/images/mld-followup.webp",
     imageClass: "scale-110 brightness-50",
-    overlay: "bg-gradient-to-b from-[#2a1560]/60 via-[#1e1050]/70 to-[#150d3a]/85",
+    customOverlay: true,
   },
 ];
 
@@ -96,13 +96,19 @@ export default function TreatmentsPage() {
                   className={`object-cover ${(treatment as any).imageClass || "transition-transform duration-700 group-hover:scale-105"}`}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className={`absolute inset-0 ${
-                  (treatment as any).overlay
-                    ? (treatment as any).overlay
-                    : treatment.highlight
+                {(treatment as any).customOverlay ? (
+                  <>
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#2a1560]/50 via-[#1e1050]/60 to-[#150d3a]/80" />
+                    <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 20% 30%, rgba(200,100,180,0.25) 0%, transparent 50%), radial-gradient(ellipse at 80% 60%, rgba(60,120,200,0.2) 0%, transparent 45%), radial-gradient(ellipse at 50% 80%, rgba(180,80,160,0.15) 0%, transparent 40%), radial-gradient(ellipse at 70% 20%, rgba(80,140,220,0.18) 0%, transparent 45%)" }} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#150d3a]/60 via-transparent to-[#2a1560]/30" />
+                  </>
+                ) : (
+                  <div className={`absolute inset-0 ${
+                    treatment.highlight
                       ? "bg-gradient-to-b from-primary/70 via-primary-dark/80 to-primary-dark/90"
                       : "bg-gradient-to-b from-black/40 via-black/55 to-black/75"
-                }`} />
+                  }`} />
+                )}
                 <div className="relative p-8 flex flex-col flex-1 justify-end">
                   <h3 className="text-xl font-semibold mb-3 text-white">
                     {treatment.title}
