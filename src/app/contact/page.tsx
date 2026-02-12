@@ -135,6 +135,8 @@ export default function ContactPage() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
+              <div className="absolute inset-0 bg-pink-400/30 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px]" />
             </div>
           </div>
 
