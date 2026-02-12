@@ -21,7 +21,7 @@ const services = [
     title: "Pain Management",
     description:
       "Relief from headaches, arthritis, back pain, neck & shoulder tension, and frozen shoulder through targeted acupuncture.",
-    gradient: "linear-gradient(to bottom right, #ffe4e6, #fce7f3)",
+    gradient: "linear-gradient(to bottom right, #fff1f2, #fdf2f8)",
     iconColor: "text-rose-500",
   },
   {
@@ -29,7 +29,7 @@ const services = [
     title: "Female Wellness",
     description:
       "Support for period pain, irregular periods, menopausal symptoms, fertility, IVF support, and pregnancy care.",
-    gradient: "linear-gradient(to bottom right, #faf5ff, #ede9fe)",
+    gradient: "linear-gradient(to bottom right, #fdf4ff, #f5f3ff)",
     iconColor: "text-purple-500",
   },
   {
@@ -37,7 +37,7 @@ const services = [
     title: "Mental Wellbeing",
     description:
       "Holistic treatment for anxiety, stress, insomnia, fatigue, brain fog, and immune system support.",
-    gradient: "linear-gradient(to bottom right, #dbeafe, #e0f2fe)",
+    gradient: "linear-gradient(to bottom right, #eff6ff, #f0f9ff)",
     iconColor: "text-blue-600",
   },
   {
