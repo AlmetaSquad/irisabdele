@@ -31,7 +31,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm"
     >
       {/* Logo row */}
-      <div className="flex items-center justify-center h-[176px] overflow-hidden">
+      <div className="flex items-center justify-center h-[140px] overflow-hidden">
         <Link href="/">
           <Image
             src="/images/logo-ia.png"
