@@ -45,7 +45,7 @@ const services = [
     title: "Digestive Health",
     description:
       "Natural relief for IBS symptoms, constipation, diarrhoea, nausea, and other digestive concerns.",
-    gradient: "linear-gradient(to bottom right, #ffedd5, #fef3c7)",
+    gradient: "linear-gradient(to bottom right, #fff7ed, #fefce8)",
     iconColor: "text-orange-400",
   },
 ];
