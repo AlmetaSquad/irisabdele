@@ -21,7 +21,7 @@ const services = [
     title: "Pain Management",
     description:
       "Relief from headaches, arthritis, back pain, neck & shoulder tension, and frozen shoulder through targeted acupuncture.",
-    color: "from-rose-50 to-pink-50",
+    gradient: "linear-gradient(to bottom right, #ffe4e6, #fce7f3)",
     iconColor: "text-rose-500",
   },
   {
@@ -29,7 +29,7 @@ const services = [
     title: "Female Wellness",
     description:
       "Support for period pain, irregular periods, menopausal symptoms, fertility, IVF support, and pregnancy care.",
-    color: "from-purple-50 to-violet-50",
+    gradient: "linear-gradient(to bottom right, #faf5ff, #ede9fe)",
     iconColor: "text-purple-500",
   },
   {
@@ -37,7 +37,7 @@ const services = [
     title: "Mental Wellbeing",
     description:
       "Holistic treatment for anxiety, stress, insomnia, fatigue, brain fog, and immune system support.",
-    color: "from-blue-100 to-sky-100",
+    gradient: "linear-gradient(to bottom right, #dbeafe, #e0f2fe)",
     iconColor: "text-blue-600",
   },
   {
@@ -45,8 +45,8 @@ const services = [
     title: "Digestive Health",
     description:
       "Natural relief for IBS symptoms, constipation, diarrhoea, nausea, and other digestive concerns.",
-    color: "from-sky-100 to-cyan-100",
-    iconColor: "text-sky-500",
+    gradient: "linear-gradient(to bottom right, #ffedd5, #fef3c7)",
+    iconColor: "text-orange-400",
   },
 ];
 
@@ -167,7 +167,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`group p-8 rounded-2xl bg-gradient-to-br ${service.color} hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-default`}
+                style={{ background: service.gradient }}
+                className="group p-8 rounded-2xl hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-default"
               >
                 <div
                   className={`w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${service.iconColor}`}
