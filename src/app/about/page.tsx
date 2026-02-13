@@ -56,8 +56,8 @@ export default function AboutPage() {
                   sizes="(max-width: 1024px) 80vw, 40vw"
                   priority
                 />
-                <div className="absolute inset-0 bg-pink-400/30 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px]" />
+                <div className="absolute inset-0 bg-pink-300/15 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-[0.5px]" />
               </div>
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/20 rounded-2xl -z-10" />
             </div>
