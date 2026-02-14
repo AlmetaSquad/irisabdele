@@ -100,16 +100,18 @@ a img, button img {
 
 /* Night sky effect */
 .night-sky {
-  background: linear-gradient(180deg, #050d1a 0%, #0a1628 30%, #0e1f3d 60%, #091428 100%);
+  background: linear-gradient(180deg, #080818 0%, #0e1230 25%, #1a1445 50%, #0e1f3d 75%, #0a0e28 100%);
 }
 .night-sky::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 25% 20%, rgba(30,60,120,0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 75% 60%, rgba(20,50,100,0.15) 0%, transparent 45%),
-    radial-gradient(ellipse at 50% 85%, rgba(25,45,90,0.12) 0%, transparent 40%);
+    radial-gradient(ellipse at 25% 20%, rgba(59,56,128,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 60%, rgba(42,39,96,0.2) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 85%, rgba(25,45,90,0.15) 0%, transparent 40%),
+    radial-gradient(ellipse at 60% 30%, rgba(90,87,176,0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 15% 70%, rgba(59,56,128,0.18) 0%, transparent 50%);
   pointer-events: none;
 }
 .night-sky::after {

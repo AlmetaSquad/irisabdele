@@ -31,7 +31,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm"
     >
       {/* Logo row */}
-      <div className="flex items-center justify-center h-[176px] overflow-hidden">
+      <div className="flex items-center justify-center h-[140px] overflow-hidden">
         <Link href="/">
           <Image
             src="/images/logo-ia.png"
@@ -54,7 +54,7 @@ export default function Navbar() {
       </div>
 
       {/* Desktop nav row */}
-      <nav className="hidden lg:flex items-center justify-center gap-8 border-t border-gray-100 py-1">
+      <nav className="hidden lg:flex items-center justify-center gap-8 border-t border-black py-1">
         {navLinks.map((link) => (
           <Link
             key={link.href}

@@ -46,16 +46,18 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="relative">
+            <div className="relative w-[80%] mx-auto">
               <div className="w-full aspect-square rounded-2xl overflow-hidden relative">
                 <Image
                   src="/images/iris-portrait-bw.webp"
                   alt="Iris Abdele — Acupuncturist & Advanced Facialist"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 80vw, 40vw"
                   priority
                 />
+                <div className="absolute inset-0 bg-pink-300/15 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-[0.5px]" />
               </div>
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/20 rounded-2xl -z-10" />
             </div>
